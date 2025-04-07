@@ -1,0 +1,12 @@
+{
+    "model":
+    {
+        "description":"just some memo here",
+        "model_name": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+        "template_type":"DeepSeek",
+        "device": "cuda:0",
+        "bf16": true,
+        "system_msg": "You are a helpful assistant.",
+        "answer_prefix": ""
+    }
+}
