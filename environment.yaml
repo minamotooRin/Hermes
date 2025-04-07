@@ -1,4 +1,4 @@
-name: RomaLLM
+name: Hermes
 channels:
   - conda-forge
   - defaults
