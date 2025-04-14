@@ -5,7 +5,7 @@ from PIL import Image
 
 from transformers import AutoProcessor, LlavaForConditionalGeneration
 
-from .LLM import MLLM_local
+from AgentFactory.Models.LLM import MLLM_local
 
 def load_Image(image_path):
 

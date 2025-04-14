@@ -1,7 +1,7 @@
 import base64
 import google.generativeai as genai
 
-from .LLM import MLLM_remote
+from AgentFactory.Models.LLM import MLLM_remote
 
 def load_image(image_path):
     # load image to mime_type="image/jpeg" and base64 encode
@@ -58,7 +58,7 @@ class Gemini(MLLM_remote):
     def total_cost(self):
         return self.input_tokens * self.PRICE[self.model_name]["input"] + self.output_tokens * self.PRICE[self.model_name]["output"]
     
-    def get_response(self, msgs, images, max_length = 0):
+    def get_response(self, msgs, images, max_length = 0, reply_prefix = ""):
         
         """
         msgs = [

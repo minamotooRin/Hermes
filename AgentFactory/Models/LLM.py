@@ -46,9 +46,10 @@ class LLM_local(LLM):
         
         self.device = device
 
-        self.model = AutoModelForCausalLM.from_pretrained(model_name).to(device)
+        self.model = AutoModelForCausalLM.from_pretrained(model_name)
         if bf16:
             self.model = self.model.bfloat16()
+        self.model.to(self.device)
             
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
     

@@ -4,7 +4,7 @@ import torch
 import re
 from transformers import  AutoModel
 
-from LLM import MLLM_local, MLLM_remote
+from AgentFactory.Models.LLM import MLLM_local, MLLM_remote
 
 class NVILA(MLLM_local):
     

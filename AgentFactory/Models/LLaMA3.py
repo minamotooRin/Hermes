@@ -1,6 +1,6 @@
 import re
 
-from .LLM import LLM_local
+from AgentFactory.Models.LLM import LLM_local
 
 class LLaMA3(LLM_local):
     

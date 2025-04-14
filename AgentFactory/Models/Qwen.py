@@ -3,7 +3,7 @@ import torch
 from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor
 from qwen_vl_utils import process_vision_info
 
-from .LLM import MLLM_local
+from AgentFactory.Models.LLM import MLLM_local
 
 class Qwen(MLLM_local):
     "Qwen/Qwen2.5-VL-7B-Instruct"

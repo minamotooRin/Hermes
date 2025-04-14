@@ -1,5 +1,5 @@
-from Models.LLM import LLM
-from utils import save_to_jsonl
+from AgentFactory.Models.LLM import LLM
+from AgentFactory.utils import save_to_jsonl
 
 class Agent:
     def __init__(self, llm:LLM, instruction:str = None):

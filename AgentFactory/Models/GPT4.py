@@ -1,4 +1,6 @@
-from .LLM import LLM_remote
+# TBD
+
+from AgentFactory.Models.LLM import LLM_remote
 
 class GPT(LLM_remote):
     _instance = None
