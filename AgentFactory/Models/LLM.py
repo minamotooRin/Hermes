@@ -66,7 +66,9 @@ class LLM_local(LLM):
         def single_modalitize(_msgs):
             msgs = copy.deepcopy(_msgs)
             for msg in msgs:
-                msg["content"] = msg["content"][0]["text"] if type(msg["content"]) == list else msg["content"]
+                if type(msg["content"]) == list:
+                # concatenate the list of strings in msg["content"] into a single string
+                    msg["content"] = "".join([it["text"] for it in msg["content"]])
             return msgs
         
         msgs = single_modalitize(msg_history)

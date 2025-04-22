@@ -11,6 +11,16 @@ def load_image(image_path):
 
     return b64_image
 
+def upload_to_gemini(path, mime_type=None):
+    """
+    "image/jpeg"
+    Uploads the given file to Gemini.
+    See https://ai.google.dev/gemini-api/docs/prompting_with_media
+    """
+    file = genai.upload_file(path, mime_type=mime_type)
+    print(f"Uploaded file '{file.display_name}' as: {file.uri}")
+    return file
+
 class Gemini(MLLM_remote):
     _instance = None
 
@@ -79,13 +89,13 @@ class Gemini(MLLM_remote):
         ]
         """
         
-        instr = msgs[0]["content"][0]["text"] if msgs[0]["role"] == "model" else ""
+        instr = "".join([it["text"] for it in msgs[0]["content"]]) if msgs[0]["role"] == self.roleNames["system"] else ""
         self.set_instruction(instr)
 
         img_cnt = 0
 
         history = []
-        it = 1 if msgs[0]["role"] == "model" else 0
+        it = 1 if msgs[0]["role"] == self.roleNames["system"] else 0
         while it + 1 < len(msgs):
 
             demon_user = []

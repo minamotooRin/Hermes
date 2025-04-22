@@ -14,6 +14,7 @@ class ModelPool:
             "Qwen": "AgentFactory.Models.Qwen.Qwen",
             "Gemini": "AgentFactory.Models.Gemini.Gemini",
             "LLaVA": "AgentFactory.Models.LLaVA.LLaVA",
+            "GPT": "AgentFactory.Models.GPT.GPT",
         }
 
         self.models = {}
