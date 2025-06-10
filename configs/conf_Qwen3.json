@@ -1,0 +1,12 @@
+{
+    "model":
+    {
+        "description":"just some memo here",
+        "model_name": "Qwen/Qwen3-4B-Instruct",
+        "template_type":"Qwen3",
+        "device": "cuda:0",
+        "bf16": true,
+        "system_msg": "",
+        "answer_prefix": ""
+    }
+}

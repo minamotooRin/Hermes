@@ -16,4 +16,7 @@ class AgentFactory:
 
         agent = Agent(self.model_pool[config["model_name"]])
 
+        if "system_msg" in config:
+            agent.instruction = config["system_msg"]
+
         return agent

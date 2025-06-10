@@ -1,5 +1,4 @@
 import base64
-
 from openai import OpenAI
 
 def load_image(image_path):
@@ -116,8 +115,8 @@ class GPT(MLLM_remote):
             model = self.model_name,
             input = history
         )
-        self.input_tokens = response.usage.input_tokens
-        self.output_tokens = response.usage.output_tokens
+        self.input_tokens += response.usage.input_tokens
+        self.output_tokens += response.usage.output_tokens
 
         return response, response.output_text
             

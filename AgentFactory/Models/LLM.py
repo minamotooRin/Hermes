@@ -46,6 +46,13 @@ class LLM_local(LLM):
         
         self.device = device
 
+        # self.model = LLM(
+        #     model=model_name,
+        #     trust_remote_code=True,  # Required to load Phi-3.5-vision
+        #     dtype="bfloat16" if bf16 else "float16",
+        #     tensor_parallel_size = 4
+        # )
+
         self.model = AutoModelForCausalLM.from_pretrained(model_name)
         if bf16:
             self.model = self.model.bfloat16()
