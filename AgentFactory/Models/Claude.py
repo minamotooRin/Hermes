@@ -48,15 +48,14 @@ class Claude(MLLM_remote):
             "user": "user",
             "assistant": "assistant"
         }
-        print(f"Using Claude model: {model_name}, API Key: {api_key}")
         self.client = anthropic.Anthropic(api_key=api_key)
         self.instr = instr
 
         # 定价（请根据实际定价更新，单位：美元／1k tokens）
         self.PRICE = {
             "claude-sonnet-4-20250514": {
-                "input": 0.00325 / 1000,
-                "output": 0.00450 / 1000,
+                "input": 0.0015 / 1000,
+                "output": 0.0075 / 1000,
             },
         }
     
